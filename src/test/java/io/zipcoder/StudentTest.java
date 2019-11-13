@@ -28,11 +28,8 @@ public class StudentTest {
 
     @Test
     public void getNumberOfExamsTakenTest() {
-        Student student = new Student(null,null,null);
+        Student student = new Student(null, null, null);
         ArrayList<Double> examScoress = student.getExamScores();
-
-
-
 
 
     }
@@ -40,26 +37,25 @@ public class StudentTest {
 
     @Test
     public void getExamScoresTest() {
-        ArrayList<Double> examScoress = new ArrayList<Double>(Arrays.asList(90.0, 76.0,89.0));
-        Student student = new Student(null,null, examScoress);
-        ArrayList expectedExamScoress = examScoress;
+        ArrayList<Double> examScoress = new ArrayList<Double>(Arrays.asList(90.0, 76.0, 89.0));
+        Student student = new Student(null, null, examScoress);
+        ArrayList expectedExamScoress = new ArrayList<Double>(Arrays.asList(90.0, 76.0, 89.0));
         ArrayList actualExamSocoress = examScoress;
-        Assert.assertEquals(expectedExamScoress,actualExamSocoress);
-
+        Assert.assertEquals(expectedExamScoress, actualExamSocoress);
 
 
     }
-
 
 
     @Test
     public void getAverageExamScoreTest() {
-        ArrayList<Double> examScoress = new ArrayList<Double>(Arrays.asList(90.0, 76.0,89.0));
-        Student student = new Student(null,null,examScoress);
-        Double expectedAverageExamScore = student.getAverageExamScore();
+        ArrayList<Double> examScoress = new ArrayList<Double>(Arrays.asList(90.0, 76.0, 89.0));
+        Student student = new Student(null, null, examScoress);
+        Double expectedAverageExamScore = 85.0;
         Double actualAverageExamScore = student.getAverageExamScore();
-        Assert.assertEquals(expectedAverageExamScore,actualAverageExamScore);
+        Assert.assertEquals(expectedAverageExamScore, actualAverageExamScore);
 
     }
-}
 
+
+}

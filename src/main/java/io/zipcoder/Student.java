@@ -3,7 +3,7 @@ package io.zipcoder;
 import java.util.ArrayList;
 // this is a blueprint in case we want multiple students
 
-public class Student {
+public class Student implements Comparable<Student> {
  // declaring variables
  String firstName;
  String lastName;
@@ -75,7 +75,7 @@ public class Student {
   Double sum = 0.0;
 
   for (int i =0 ; i < examScores.size(); i ++) {
-   sum = examScores.get(i) + sum;
+   sum += examScores.get(i);
 
   }
   Double average = sum / examScores.size();
@@ -87,11 +87,23 @@ public class Student {
  @Override
  public String toString() {
 
-
-
-  return "student name" + getFirstName() + " " + getLastName() + "\n" +
+     return "student name" + getFirstName() + " " + getLastName() + "\n" +
           "> Average Score: " + getAverageExamScore() +"\n" +
           "> Exam Scores: " + "\n" +
           printExamScores();
+ }
+
+
+ @Override
+
+ public int compareTo (Student alumnis) {
+    if(this.getAverageExamScore() < alumnis.getAverageExamScore()){
+     return -1;
+    } else if (this.getAverageExamScore() > alumnis.getAverageExamScore()){
+     return 1;
+    } else {
+     return (this.firstName).compareTo(alumnis.firstName);
+    }
+
  }
 }
